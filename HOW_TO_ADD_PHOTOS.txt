@@ -1,0 +1,3 @@
+Put 6 photos in "images": memory1.jpg ... memory6.jpg
+Put 1 video in "videos": video1.mp4
+Box 2 = video, boxes 4 and 7 = "no memories", the rest = photos.
