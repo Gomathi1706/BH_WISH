@@ -28,34 +28,47 @@ if(page==='home'){
 }
 
 /* ===== PAGE 2: memories ===== */
+/* ===== PAGE 2: memories ===== */
 if(page==='memories'){
-  // EDIT HERE: change src / caption. Use type:'video' for a video file.
   const memories=[
-    const memories=[
-  {type:'photo',src:'memory1.jpg',caption:'Memory 1 🤍'},
-  {type:'video',src:'video1.mp4',caption:'Our video 🩵'},
-  {type:'photo',src:'memory2.jpg',caption:'Memory 3 🤍'},
-  {type:'none'},
-  {type:'photo',src:'memory3.jpg',caption:'Memory 5 🩵'},
-  {type:'photo',src:'memory4.jpg',caption:'Memory 6 🤍'},
-  {type:'none'},
-  {type:'photo',src:'memory5.jpg',caption:'Memory 8 🩵'},
-  {type:'photo',src:'memory6.jpg',caption:'Memory 9 🤍'}
-];
+    {type:'photo',src:'memory1.jpg',caption:'Memory 1 🤍'},
+    {type:'video',src:'video1.mp4',caption:'Our video 🩵'},
+    {type:'photo',src:'memory2.jpg',caption:'Memory 3 🤍'},
+    {type:'none'},
+    {type:'photo',src:'memory3.jpg',caption:'Memory 5 🩵'},
+    {type:'photo',src:'memory4.jpg',caption:'Memory 6 🤍'},
+    {type:'none'},
+    {type:'photo',src:'memory5.jpg',caption:'Memory 8 🩵'},
+    {type:'photo',src:'memory6.jpg',caption:'Memory 9 🤍'}
   ];
+
   const grid=document.getElementById('grid');
+
   memories.forEach((m,i)=>{
-    const b=document.createElement('div');b.className='box';
+    const b=document.createElement('div');
+    b.className='box';
+
     let inner;
-    if(m.type==='none') inner='<p>Sorry, inga memories edhum illa 🥹🤍</p>';
-    else if(m.type==='video') inner=`<video controls playsinline preload="metadata" src="${m.src}" onerror="this.outerHTML='<p>Add your video: ${m.src}</p>'"></video><p>${m.caption}</p>`;
-    else inner=`<img src="${m.src}" alt="Memory ${i+1}" onerror="this.outerHTML='<p>Add your photo: ${m.src}</p>'"><p>${m.caption}</p>`;
+
+    if(m.type==='none'){
+      inner='<p>Sorry, inga memories edhum illa 🥹🤍</p>';
+    }
+    else if(m.type==='video'){
+      inner=`<video controls playsinline preload="metadata" src="${m.src}" onerror="this.outerHTML='<p>Add your video: ${m.src}</p>'"></video><p>${m.caption}</p>`;
+    }
+    else{
+      inner=`<img src="${m.src}" alt="Memory ${i+1}" onerror="this.outerHTML='<p>Add your photo: ${m.src}</p>'"><p>${m.caption}</p>`;
+    }
+
     b.innerHTML=`<button>${m.type==='video'?'🎬':'💙'} Memory ${i+1}</button><div class="content">${inner}</div>`;
-    b.querySelector('button').onclick=()=>b.classList.toggle('open');
+
+    b.querySelector('button').onclick=()=>{
+      b.classList.toggle('open');
+    };
+
     grid.appendChild(b);
   });
 }
-
 /* ===== PAGE 3: letter ===== */
 if(page==='letter'){
   // EDIT HERE: change the letter to your own words
