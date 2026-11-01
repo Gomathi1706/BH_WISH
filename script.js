@@ -31,15 +31,17 @@ if(page==='home'){
 if(page==='memories'){
   // EDIT HERE: change src / caption. Use type:'video' for a video file.
   const memories=[
-    {type:'photo',src:'images/memory1.jpg',caption:'Memory 1 🤍'},
-    {type:'video',src:'videos/video1.mp4',caption:'Our video 🩵'},
-    {type:'photo',src:'images/memory2.jpg',caption:'Memory 3 🤍'},
-    {type:'none'},
-    {type:'photo',src:'images/memory3.jpg',caption:'Memory 5 🩵'},
-    {type:'photo',src:'images/memory4.jpg',caption:'Memory 6 🤍'},
-    {type:'none'},
-    {type:'photo',src:'images/memory5.jpg',caption:'Memory 8 🩵'},
-    {type:'photo',src:'images/memory6.jpg',caption:'Memory 9 🤍'}
+    const memories=[
+  {type:'photo',src:'memory1.jpg',caption:'Memory 1 🤍'},
+  {type:'video',src:'video1.mp4',caption:'Our video 🩵'},
+  {type:'photo',src:'memory2.jpg',caption:'Memory 3 🤍'},
+  {type:'none'},
+  {type:'photo',src:'memory3.jpg',caption:'Memory 5 🩵'},
+  {type:'photo',src:'memory4.jpg',caption:'Memory 6 🤍'},
+  {type:'none'},
+  {type:'photo',src:'memory5.jpg',caption:'Memory 8 🩵'},
+  {type:'photo',src:'memory6.jpg',caption:'Memory 9 🤍'}
+];
   ];
   const grid=document.getElementById('grid');
   memories.forEach((m,i)=>{
